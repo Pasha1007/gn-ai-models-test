@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Photo Studio</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Welcome to Our Photo Studio</h1>
+	</header>
+	<main>
+		<section id="services">
+			<h2>Our Services</h2>
+			<p>We offer a variety of photography services, including:</p>
+			<ul>
+				<li>Portraits</li>
+				<li>Weddings</li>
+				<li>Events</li>
+				<li>Product photography</li>
+			</ul>
+		</section>
+		<section id="gallery">
+			<h2>Gallery</h2>
+			<div id="slider">
+				<img src="image1.jpg" alt="Image 1">
+				<img src="image2.jpg" alt="Image 2">
+				<img src="image3.jpg" alt="Image 3">
+			</div>
+		</section>
+		<section id="contact">
+			<h2>Contact Us</h2>
+			<form id="contact-form">
+				<input type="text" id="name" placeholder="Name" required>
+				<input type="email" id="email" placeholder="Email" required>
+				<textarea id="message" placeholder="Message" required></textarea>
+				<button type="submit">Send</button>
+			</form>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2023 Photo Studio</p>
+	</footer>
+	<script src="script.js"></script>
+</body>
+</html>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #f8f8f8;
+	padding: 20px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 36px;
+	margin: 0;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 20px;
+}
+
+section {
+	flex-basis: 33.33%;
+	margin-right: 20px;
+}
+
+section:last-child {
+	margin-right: 0;
+}
+
+h2 {
+	font-size: 24px;
+	margin: 0 0 10px;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin-bottom: 10px;
+}
+
+#slider {
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+#slider img {
+	width: 100%;
+	float: left;
+}
+
+#contact {
+	margin-top: 20px;
+}
+
+#contact-form {
+	margin-top: 20px;
+}
+
+input, textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+button {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+footer {
+	background-color: #f8f8f8;
+	padding: 20px;
+	text-align:center;
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+}
+
+footer p {
+margin: 0;
+font-size: 14px;
+}
+</style>
+<script>
+const slider = document.getElementById("slider");
+const images = document.querySelectorAll("#slider img");
+let currentImageIndex = 0;
+
+function nextImage() {
+currentImageIndex++;
+if (currentImageIndex >= images.length) {
+currentImageIndex = 0;
+}
+images.forEach((image, index) => {
+image.style.transform = `translateX(${(index - currentImageIndex) * 100}%)`;
+});
+}
+
+setInterval(nextImage, 5000);
+
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("submit", (event) => {
+event.preventDefault();
+
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const message = document.getElementById("message");
+
+const formData = {
+name: name.value,
+email: email.value,
+message: message.value,
+};
+
+console.log(formData);
+
+// You can add your own code here to send the form data to your server
+});
+<script/>
