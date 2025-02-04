@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Studio</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Photo Studio</div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <h1>Capture Your Perfect Moments</h1>
+      <p>Professional photography for all occasions.</p>
+      <button onclick="scrollToSection('services')">Explore Services</button>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="service-list">
+        <div class="service-item">
+          <h3>Portrait Photography</h3>
+          <p>Beautiful portraits that capture your personality.</p>
+        </div>
+        <div class="service-item">
+          <h3>Event Photography</h3>
+          <p>Memorable shots from your special events.</p>
+        </div>
+        <div class="service-item">
+          <h3>Product Photography</h3>
+          <p>High-quality images for your products.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <h2>Portfolio</h2>
+      <div class="gallery">
+        <img src="https://via.placeholder.com/300" alt="Photo 1" />
+        <img src="https://via.placeholder.com/300" alt="Photo 2" />
+        <img src="https://via.placeholder.com/300" alt="Photo 3" />
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 Photo Studio. All rights reserved.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
